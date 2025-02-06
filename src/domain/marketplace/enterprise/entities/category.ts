@@ -4,7 +4,6 @@ import { AggregateRoot } from '@/domain/core/entities/aggregate-root'
 import { Optional } from '@/domain/core/types/optional'
 
 export interface CategoryProps {
-  categoryId: UniqueEntityID
   title: string
   slug: Slug
   createdAt: Date
@@ -13,10 +12,6 @@ export interface CategoryProps {
 
 export class Category extends AggregateRoot<CategoryProps> {
   
-  get categoryId() {
-    return this.props.categoryId
-  }
-
   get title() {
     return this.props.title
   }
