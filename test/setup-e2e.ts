@@ -5,7 +5,7 @@ import { randomUUID } from 'node:crypto'
 import { execSync } from 'node:child_process'
 import { envSchema } from '@/infra/env/env'
 import { Redis } from 'ioredis'
-import { DomainEvents } from '@/domain/core/events/domain-events'
+import { DomainEvents } from '@/core/events/domain-events'
 
 config({ path: '.env', override: true })
 config({ path: '.env.test', override: true })

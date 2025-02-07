@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { Either, right } from '@/domain/core/either'
+import { Either, right } from '@/core/either'
 import { Category } from '../../enterprise/entities/category'
 import { CategoryRepository } from '../repositories/category-repository'
 

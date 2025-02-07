@@ -1,7 +1,7 @@
 import { Slug } from './value-objects/slug'
-import { UniqueEntityID } from '@/domain/core/entities/unique-entity-id'
-import { AggregateRoot } from '@/domain/core/entities/aggregate-root'
-import { Optional } from '@/domain/core/types/optional'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { AggregateRoot } from '@/core/entities/aggregate-root'
+import { Optional } from '@/core/types/optional'
 
 export interface CategoryProps {
   title: string

@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker'
 import { Injectable } from '@nestjs/common'
 import { PrismaService } from '@/infra/database/prisma/prisma.service'
 import { PrismaCategoryMapper } from '@/infra/database/prisma/mappers/prisma-category-mapper'
-import { UniqueEntityID } from '@/domain/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Category, CategoryProps } from '@/domain/marketplace/enterprise/entities/category'
 
 export function makeCategory(

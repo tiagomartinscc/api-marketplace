@@ -1,4 +1,4 @@
-import { UniqueEntityID } from '@/domain/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Category } from '@/domain/marketplace/enterprise/entities/category'
 import { Slug } from '@/domain/marketplace/enterprise/entities/value-objects/slug'
 import { Category as PrismaCategory, Prisma } from '@prisma/client'
@@ -12,7 +12,6 @@ export class PrismaCategoryMapper {
     return Category.create(
       {
         title: raw.title,
-        categoryId: new UniqueEntityID(raw.id),
         slug: Slug.create(raw.slug),
         createdAt: raw.createdAt,
         updatedAt: raw.updatedAt,
