@@ -8,6 +8,8 @@ import { RegisterUserController } from './controllers/register-user.controller';
 import { RegisterUserUseCase } from '@/domain/marketplace/application/use-cases/register-user';
 import { AuthenticateController } from './controllers/authenticate.controller';
 import { AuthenticateUseCase } from '@/domain/marketplace/application/use-cases/authenticate';
+import { EditUserController } from './controllers/edit-user.controller';
+import { EditUserUseCase } from '@/domain/marketplace/application/use-cases/edit-user';
 
 @Module({
   imports: [DatabaseModule, CryptographyModule],
@@ -15,11 +17,13 @@ import { AuthenticateUseCase } from '@/domain/marketplace/application/use-cases/
     FetchCategoriesController,
     RegisterUserController,
     AuthenticateController,
+    EditUserController,
   ],
   providers: [
     FetchCategoriesUseCase,
     RegisterUserUseCase,
-    AuthenticateUseCase
+    AuthenticateUseCase,
+    EditUserUseCase
   ],
 })
 export class HttpModule {}

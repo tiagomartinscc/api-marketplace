@@ -35,7 +35,6 @@ export class EditUserUseCase {
     phone,
     password,
   }: EditUserUseCaseRequest): Promise<EditUserUseCaseResponse> {
-    
     const user = await this.usersRepository.find(id)
     if (!user) {
       return left(new ResourceNotFoundError())
@@ -69,9 +68,7 @@ export class EditUserUseCase {
       const hashedPassword = await this.hashGenerator.hash(password)
       user.password = hashedPassword
     }
- 
     await this.usersRepository.save(user)
-
     return right({
       user,
     })

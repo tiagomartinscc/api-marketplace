@@ -12,7 +12,7 @@ const registerUserBodySchema = z.object({
   confirm_password: z.string().min(3).max(10)
 }).refine(data => data.password === data.confirm_password, {
   message: "Passwords don't match",
-  path: ["password_confirmation"]
+  path: ["confirm_password"]
 })
 
 const bodyValidationPipe = new ZodValidationPipe(registerUserBodySchema)

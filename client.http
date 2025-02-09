@@ -14,6 +14,32 @@ Content-Type: application/json
 }
 
 ###
+# @name updated_user
+PUT {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "id": "b3f39c74-c6a3-4224-80e2-d2ef397aac5b",
+  "name": "James Martins",
+  "email": "james@tiagoweb.com",
+  "phone": "51 77777777"
+}
+
+###
+# @name updated_user_with_credentials
+PUT {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "id": "b3f39c74-c6a3-4224-80e2-d2ef397aac5b",
+  "name": "James Martins",
+  "email": "james@tiagoweb.com",
+  "phone": "51 77777777",
+  "password": "teste123",
+  "confirm_password": "teste123"
+}
+
+###
 
 # @name authenticate
 POST {{baseUrl}}/sessions

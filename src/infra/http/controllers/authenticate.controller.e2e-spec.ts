@@ -60,7 +60,6 @@ describe('Authenticate User', () => {
     })
 
     expect(result.isLeft()).toBe(true)
-    console.log(result.value)
     expect(result.value).toEqual(new WrongCredentialsError())
   })
 
@@ -80,7 +79,6 @@ describe('Authenticate User', () => {
     })
 
     expect(result.isLeft()).toBe(true)
-    console.log(result.value)
     expect(result.value).toEqual(new WrongCredentialsError())
   })
 })
