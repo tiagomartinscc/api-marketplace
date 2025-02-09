@@ -40,18 +40,16 @@ Content-Type: application/json
 }
 
 ###
-
 # @name authenticate
-POST {{baseUrl}}/sessions
+POST {{baseUrl}}/authenticate
 Content-Type: application/json
 
 {
-  "email": "tiago@tiagoweb.com",
-  "password": "123456"
+  "email": "james@tiagoweb.com",
+  "password": "teste123"
 }
 
 ###
-
 # @name list_categories
 GET {{baseUrl}}/categories
 Content-Type: application/json
