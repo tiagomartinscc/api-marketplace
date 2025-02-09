@@ -2,8 +2,10 @@ import { FetchCategoriesUseCase }
   from "@/domain/marketplace/application/use-cases/fetch-categories"
 import { BadRequestException, Controller, Get } from "@nestjs/common"
 import { CategoryPresenter } from "../presenters/category-presenter"
+import { Public } from "@/infra/auth/public"
 
 @Controller('/categories')
+@Public()
 export class FetchCategoriesController {
   constructor(private fetchCategoriesUseCase: FetchCategoriesUseCase) {}
 

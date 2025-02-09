@@ -1,14 +1,16 @@
 @baseUrl = http://localhost:3333
 @authToken = {{authenticate.response.body.access_token}}
 
-# @name create_account
-POST {{baseUrl}}/accounts
+# @name register_user
+POST {{baseUrl}}/register
 Content-Type: application/json
 
 {
-  "name": "Diego Fernandes",
-  "email": "diego@rocketseat.com.br",
-  "password": "123456"
+  "name": "Tiago Martins",
+  "email": "tiago@tiagoweb.com",
+  "phone": "51 999999999",
+  "password": "123456",
+  "confirm_password": "123456"
 }
 
 ###
@@ -18,10 +20,15 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "diego@rocketseat.com.br",
+  "email": "tiago@tiagoweb.com",
   "password": "123456"
 }
 
+###
+
+# @name list_categories
+GET {{baseUrl}}/categories
+Content-Type: application/json
 ###
 
 # @name create_question
