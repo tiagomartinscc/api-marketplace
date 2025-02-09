@@ -61,8 +61,6 @@ describe('Register User', () => {
       password: '123456',
     })
 
-    console.log(result.isLeft())
-
     expect(result.isLeft()).toBe(true)
     expect(result.value).toBeInstanceOf(UserAlreadyExistsError)
   })

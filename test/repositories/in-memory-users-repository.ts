@@ -5,13 +5,11 @@ export class InMemoryUsersRepository implements UsersRepository {
   public items: User[] = []
 
   async findByEmail(email: string): Promise<User | null> {
-    const user = this.items.find(user => user.phone === email)
+    const user = this.items.find(user => user.email === email)
 
     if (!user) {
-      console.log('Não achou usuario com memso e-mail')
       return null
     }
-    console.log(`Achou achou usuario com memso e-mail: {email}`)
     return user
   }
   
