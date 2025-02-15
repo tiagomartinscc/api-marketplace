@@ -1,5 +1,5 @@
 import { AttachmentsRepository } from "@/domain/marketplace/application/repositories/attachments-repository"
-import { Attachment } from "@/domain/marketplace/enterprise/entities/attachment"
+import { Attachment } from "@/domain/marketplace/enterprise/entities/product-attachment"
 
 export class InMemoryAttachmentsRepository implements AttachmentsRepository {
   public items: Attachment[] = []

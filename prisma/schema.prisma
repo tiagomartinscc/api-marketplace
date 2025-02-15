@@ -13,12 +13,13 @@ enum UserRole {
 }
 
 model User {
-  id       String   @id @default(uuid())
+  id       String    @id @default(uuid())
   name     String
-  email    String   @unique
+  email    String    @unique
   password String
-  phone    String   @unique
-  role     UserRole @default(SELLER)
+  phone    String    @unique
+  role     UserRole  @default(SELLER)
+  Product  Product[]
 
   @@map("users")
 }
@@ -29,14 +30,35 @@ model Category {
   slug      String    @unique
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime? @map("updated_at")
+  Product   Product[]
 
   @@map("categories")
 }
 
 model Attachment {
-  id    String @id @default(uuid())
-  title String
-  url   String
+  id        String  @id @default(uuid())
+  title     String
+  url       String
+  productId String? @map("product_id")
+
+  product Product? @relation(fields: [productId], references: [id])
 
   @@map("attachments")
+}
+
+model Product {
+  id           String    @id @default(uuid())
+  title        String
+  categoryId   String    @map("category_id")
+  description  String
+  priceInCents Int       @map("price_in_cents")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime? @map("updated_at")
+  sellerId     String    @map("seller_id")
+
+  category    Category     @relation(fields: [categoryId], references: [id])
+  seller      User         @relation(fields: [sellerId], references: [id])
+  attachments Attachment[]
+
+  @@map("products")
 }
